@@ -1,0 +1,39 @@
+package br.com.fiap.delivery;
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        Caminhao caminhao = new Caminhao();
+
+        caminhao.setPlaca("ABC1234");
+        caminhao.setCapacidade(500.0);
+        caminhao.setEixos(4);
+
+        Pacote pacote = new Pacote();
+
+        pacote.setCodigo("BR999");
+        pacote.setPeso(10.5);
+        pacote.setStatus("Pendente");
+
+        Rota rota = new Rota();
+
+        rota.setPacote(pacote);
+        rota.setVeiculo(caminhao);
+
+        rota.realizarEntrega();
+
+        Moto moto = new Moto();
+
+        moto.setPlaca("XYZ1234");
+        moto.setCapacidade(30.0);
+        moto.setBau(true);
+
+        Rota rotaMoto = new Rota();
+
+        rotaMoto.setPacote(pacote);
+        rotaMoto.setVeiculo(moto);
+
+        rotaMoto.realizarEntrega();
+    }
+}
